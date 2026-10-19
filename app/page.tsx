@@ -7,9 +7,16 @@ type Language = "lt" | "en";
 
 type Experience = {
   id: string;
-  company: string;
+  company: {
+    lt: string;
+    en: string;
+  };
   year: string;
   role: {
+    lt: string;
+    en: string;
+  };
+  duration: {
     lt: string;
     en: string;
   };
@@ -24,49 +31,95 @@ type Experience = {
 const experiences: Experience[] = [
   {
     id: "elinta",
-    company: "Elinta Robotics",
+    company: {
+      lt: "Elinta Robotics",
+      en: "Elinta Robotics",
+    },
     year: "2025",
     role: {
       lt: "Praktika",
       en: "Internship",
     },
+    duration: {
+      lt: "1 mėn. 26 d.",
+      en: "1 month 26 days",
+    },
     description: {
-      lt: "Praktikos metu įgijau patirties vaizdų duomenų paruošimo ir defektų anotavimo srityje, ruošiant duomenis dirbtinio intelekto modelių mokymui. Taip pat susipažinau su skirtingais duomenų žymėjimo įrankiais bei technologine darbo aplinka.",
-      en: "During my internship, I gained experience in image data preparation and defect annotation, preparing data for AI model training. I also became familiar with different data labeling tools and the technological environment used in the field.",
+      lt: "Praktikos metu įgijau patirties vaizdo duomenų paruošimo ir defektų anotavimo srityje, ruošiant duomenis dirbtinio intelekto modelių mokymui. Taip pat susipažinau su skirtingais duomenų žymėjimo įrankiais bei technologine darbo aplinka.",
+      en: "During my internship, I gained experience in image data preparation and defect annotation, preparing data for AI model training. I also became familiar with different data labeling tools and the workflows used in the field.",
     },
     color: "#9d83e8",
     background: "#f1ecff",
   },
   {
     id: "3b",
-    company: "3B SOLUTIONS",
+    company: {
+      lt: "3B SOLUTIONS",
+      en: "3B SOLUTIONS",
+    },
     year: "2023 — 2024",
     role: {
       lt: "Padavėja",
       en: "Waitress",
     },
+    duration: {
+      lt: "7 mėn. 9 d.",
+      en: "7 months 9 days",
+    },
     description: {
-      lt: "Šiame darbe išmokau susidaryti veiksmų planą, dirbti komandoje ir greitai spręsti problemas stresinėse situacijose. Taip pat pagerinau komunikacijos ir bendradarbiavimo įgūdžius.",
+      lt: "Darbo metu išmokau susidaryti veiksmų planą, dirbti komandoje ir greitai spręsti problemas stresinėse situacijose. Taip pat pagerinau komunikacijos ir bendradarbiavimo įgūdžius.",
       en: "This experience taught me to create action plans, work effectively in a team and think quickly in stressful situations. It also strengthened my communication and collaboration skills.",
     },
     color: "#d98c9f",
     background: "#fff0f4",
   },
   {
+    id: "student-representation",
+    company: {
+      lt: "Studentų atstovybė",
+      en: "Student Representation",
+    },
+    year: "2022 — 2025",
+    role: {
+      lt: " Savanorystė",
+      en: "Volunteering",
+    },
+    duration: {
+      lt: "3 metai",
+      en: "3 years",
+    },
+    description: {
+      lt: "",
+      en: "",
+    },
+    color: "#E5A078",
+    background: "#FFF0E5",
+  },
+  {
     id: "rieke",
-    company: "RIEKĖ",
+    company: {
+      lt: "RIEKĖ",
+      en: "RIEKĖ",
+    },
     year: "2021",
     role: {
       lt: "Padavėja",
       en: "Waitress",
     },
+    duration: {
+      lt: "1 mėn. 11 d.",
+      en: "1 month 11 days",
+    },
     description: {
-      lt: "Šio darbo metu išmokau dirbti su kasos aparatu, bendrauti su žmonėmis ir atsakingai atlikti kasdienes užduotis.",
+      lt: "Darbo metu išmokau dirbti su kasos aparatu, bendrauti su žmonėmis ir atsakingai atlikti kasdienes užduotis.",
       en: "During this job, I learned to work with a cash register, communicate with people and responsibly handle everyday tasks.",
     },
     color: "#7fa995",
     background: "#edf7f2",
   },
+
+
+
 ];
 
 const content = {
@@ -84,12 +137,12 @@ const content = {
     },
 
     about: {
-      eyebrow: "01 / Apie mane",
+
       title: "Apie mane",
       intro:
-        "Esu baigusi Vilnius TECH universiteto Taikomojo dirbtinio intelekto studijų programą ir įgijusi inžinerijos bakalauro laipsnį.",
+        "Sveiki, aš esu Ema Špiliauskaitė, man yra 23 metai",
       paragraph:
-        "Esu komunikabili, kūrybiška ir atsakinga. Mėgstu dirbti su kitais, susitelkti į užduotis ir nuolat mokytis naujų dalykų.",
+        "Esu kūrybiška ir smalsi, mėgstu išbandyti save įvairiose veiklose ir bendrauti su žmonėmis. Turiu loginį mąstymą, esu pastabi detalėms ir greitai mokausi. Mane įkvepia galimybė kurti, ieškoti naujų idėjų ir prisidėti prie darbų, kurie turi prasmę bei kuria vertę žmonėms. Esu atvira naujoms patirtims ir nuolat siekiu augti tiek asmeniškai, tiek profesiškai.",
       university: "VILNIUS TECH",
       universityText: "Taikomasis dirbtinis intelektas",
       erasmus: "ERASMUS+",
@@ -99,32 +152,30 @@ const content = {
     },
 
     experience: {
-      eyebrow: "02 / Patirtis",
+
       title: "Patirtis",
       description:
         "Kiekviena patirtis suteikė skirtingų įgūdžių ir padėjo augti tiek profesiškai, tiek asmeniškai.",
     },
 
     education: {
-      eyebrow: "03 / Išsilavinimas",
       title: "Išsilavinimas",
       schoolDate: "2018 — 2022",
       school: "Vilniaus Radvilų gimnazija",
       universityDate: "2022 — 2026",
       university: "VILNIUS TECH",
       degree: "Inžinerijos bakalauras",
-      program: "Taikomojo dirbtinio intelekto programa",
+      program: "Taikomasis dirbtinis intelektas",
       erasmusDate: "2025 / 02 — 2025 / 06",
-      erasmus: "Erasmus+",
+      erasmus: "Universidad de Leon",
       erasmusText:
-        "Studijos León universitete, Ispanijoje, pagal Erasmus+ programą.",
+        "Studijos Ispanijoje, pagal Erasmus+ programą.",
     },
 
     skills: {
-      eyebrow: "04 / Įgūdžiai",
       title: "Įgūdžiai",
       description:
-        "Techniniai pagrindai, duomenų paruošimas ir įrankiai, su kuriais teko dirbti studijų bei praktikos metu.",
+        "Techniniai pagrindai ir įrankiai, su kuriais teko dirbti studijų bei praktikos metu.",
       technical: "Techniniai",
       tools: "Įrankiai",
       languages: "Kalbos",
@@ -140,10 +191,13 @@ const content = {
       lithuanian: "Lietuvių · gimtoji",
       english: "Anglų · B2",
       spanish: "Ispanų · mokausi",
+      davinciResolve: "DaVinci Resolve",
+      photoshop: "Adobe Photoshop",
+      solidworks: "SOLIDWORKS",
+      canva: "Canva",
     },
 
     contact: {
-      eyebrow: "05 / Kontaktai",
       title: "Susisiekime",
       description:
         "Jeigu mano patirtis ir interesai atitinka tai, ko ieškote, mielai pabendrausiu.",
@@ -169,12 +223,11 @@ const content = {
     },
 
     about: {
-      eyebrow: "01 / About me",
       title: "About me",
       intro:
-        "I graduated from Vilnius TECH University with a Bachelor of Engineering degree in Applied Artificial Intelligence.",
+        "Hello, I am Ema Špiliauskaitė, and I am 23 years old",
       paragraph:
-        "I am communicative, creative and responsible. I enjoy working with others, staying focused on tasks and continuously learning new things.",
+        "I am a creative and curious person who enjoys trying new activities and connecting with people. I have a logical mindset, pay attention to detail, and learn quickly. I am inspired by opportunities to create, develop new ideas, and contribute to meaningful projects that make a positive difference in people's lives. I am open to new experiences and continuously strive to grow both personally and professionally.",
       university: "VILNIUS TECH",
       universityText: "Applied Artificial Intelligence",
       erasmus: "ERASMUS+",
@@ -184,14 +237,12 @@ const content = {
     },
 
     experience: {
-      eyebrow: "02 / Experience",
       title: "Experience",
       description:
         "Every experience gave me a different set of skills and helped me grow both professionally and personally.",
     },
 
     education: {
-      eyebrow: "03 / Education",
       title: "Education",
       schoolDate: "2018 — 2022",
       school: "Vilniaus Radvilų Gymnasium",
@@ -200,16 +251,15 @@ const content = {
       degree: "Bachelor of Engineering",
       program: "Applied Artificial Intelligence",
       erasmusDate: "2025 / 02 — 2025 / 06",
-      erasmus: "Erasmus+",
+      erasmus: "Universidad de Leon",
       erasmusText:
-        "Studies at the University of León, Spain, as part of the Erasmus+ programme.",
+        "Studies in Spain under the Erasmus+ programme.",
     },
 
     skills: {
-      eyebrow: "04 / Skills",
       title: "Skills",
       description:
-        "Technical foundations, data preparation and tools I have worked with during my studies and internship.",
+        "Technical foundations and tools I have worked with during my studies and internship.",
       technical: "Technical",
       tools: "Tools",
       languages: "Languages",
@@ -225,13 +275,16 @@ const content = {
       lithuanian: "Lithuanian · native",
       english: "English · B2",
       spanish: "Spanish · learning",
+      davinciResolve: "DaVinci Resolve",
+      photoshop: "Adobe Photoshop",
+      solidworks: "SOLIDWORKS",
+      canva: "Canva",
     },
 
     contact: {
-      eyebrow: "05 / Contact",
-      title: "Let's talk",
+      title: "Let's connect",
       description:
-        "If my experience and interests match what you are looking for, I would be happy to connect.",
+        "If my experience and interests align with what you are looking for, I would be happy to connect.",
       email: "Email",
       phone: "Phone",
       copy: "Copy email",
@@ -382,18 +435,22 @@ function SectionHeading({
    EXPERIENCE CARD
 ========================================================= */
 
+
 function ExperienceCard({
   experience,
   language,
   open,
   onToggle,
+  onOpenDesign,
 }: {
   experience: Experience;
   language: Language;
   open: boolean;
   onToggle: () => void;
+  onOpenDesign: (src: string) => void;
 }) {
   return (
+
     <article
       className="group overflow-hidden rounded-[2rem] border border-black/[0.07] bg-white/70 shadow-[0_10px_50px_rgba(0,0,0,0.035)] backdrop-blur-xl transition-all duration-700 hover:-translate-y-1 hover:shadow-[0_20px_70px_rgba(0,0,0,0.07)]"
       style={{
@@ -403,14 +460,14 @@ function ExperienceCard({
       }}
     >
       <div className="p-6 md:p-8 lg:p-10">
-        <div className="grid gap-6 md:grid-cols-[130px_minmax(0,1fr)_60px] md:items-center">
-          <div className="text-xs font-medium uppercase tracking-[0.18em] text-black/35">
-            {experience.year}
+        <div className="grid grid-cols-[minmax(0,1fr)_56px] items-center gap-6 md:grid-cols-[130px_minmax(0,1fr)_60px]">
+          <div className="col-span-2 text-xs font-medium uppercase tracking-[0.18em] text-black/35 md:col-span-1 md:text-center"> 
+           {experience.year}
           </div>
 
           <div className="min-w-0">
             <h3 className="break-words text-3xl font-medium leading-tight tracking-[-0.035em] md:text-4xl">
-              {experience.company}
+              {experience.company[language]}
             </h3>
 
             <p
@@ -432,12 +489,12 @@ function ExperienceCard({
                 ? `Close ${experience.company}`
                 : `Open ${experience.company}`
             }
-            className="flex h-14 w-14 shrink-0 items-center justify-center justify-self-end rounded-full border border-black/10 bg-white/70 text-xl transition-all duration-500 hover:scale-105 hover:bg-white"
+
+            className="col-start-2 row-start-2 flex h-14 w-14 shrink-0 items-center justify-center self-center justify-self-end rounded-full border border-black/10 bg-white/70 text-xl transition-all duration-500 hover:scale-105 hover:bg-white md:col-auto md:row-auto"
           >
             <span
-              className={`transition-transform duration-500 ${
-                open ? "rotate-45" : ""
-              }`}
+              className={`transition-transform duration-500 ${open ? "rotate-45" : ""
+                }`}
             >
               +
             </span>
@@ -445,34 +502,96 @@ function ExperienceCard({
         </div>
 
         <div
-          className={`grid transition-[grid-template-rows] duration-[750ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${
-            open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
-          }`}
+          className={`grid transition-[grid-template-rows] duration-[750ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+            }`}
         >
           <div className="min-h-0 overflow-hidden">
             <div
-              className={`transition-all duration-700 ${
-                open
-                  ? "translate-y-0 opacity-100"
-                  : "-translate-y-5 opacity-0"
-              }`}
+              className={`transition-all duration-700 ${open
+                ? "translate-y-0 opacity-100"
+                : "-translate-y-5 opacity-0"
+                }`}
             >
               <div className="my-8 h-px bg-black/[0.07]" />
 
-              <div className="grid gap-7 md:grid-cols-[1fr_auto] md:items-end">
-                <p className="max-w-3xl text-base leading-8 text-black/55 md:text-lg">
+<div className="grid gap-7">
+                  <p className="max-w-3xl text-base leading-8 text-black/55 md:text-lg">
                   {experience.description[language]}
                 </p>
 
-                <span
-                  className="text-xs uppercase tracking-[0.18em]"
-                  style={{
-                    color: experience.color,
-                  }}
-                >
-                  {experience.role[language]}
-                </span>
+                
               </div>
+
+              {experience.id === "student-representation" && (
+                <div className="mt-4 grid gap-6 md:grid-cols-3">
+                  <div className="rounded-2xl border border-[#E5A078]/20 bg-white/60 p-5">
+                    <h4 className="font-medium text-[#C9825C]">
+                      {language === "lt"
+                        ? "Žmogiškųjų išteklių koordinatorė"
+                        : "Human Resources Coordinator"}
+                    </h4>
+                    <p className="mt-3 text-sm leading-7 text-black/55">
+                      {language === "lt"
+                        ? "Buvau atsakinga už informacijos sklaidą atstovybės savanoriams, rašiau socialinių tinklų įrašus, bendradarbiavau su kitais fakultetais ir savarankiškai suorganizavau Kalėdinį bendruomenės susibūrimą."
+                        : "I was responsible for keeping student representation volunteers informed, created social media posts, collaborated with other faculties, and independently organized a Christmas gathering for the community."}
+                    </p>
+                  </div>
+
+                  <div className="rounded-2xl border border-[#E5A078]/20 bg-white/60 p-5">
+                    <h4 className="font-medium text-[#C9825C]">
+                      {language === "lt"
+                        ? "Pirmakursių kuratorė"
+                        : "First-Year Student Mentor"}
+                    </h4>
+                    <p className="mt-3 text-sm leading-7 text-black/55">
+                      {language === "lt"
+                        ? "Du metus padėjau pirmakursiams adaptuotis universitete, įsitraukti į bendruomenę ir susipažinti su studentišku gyvenimu. Taip pat prisidėjau prie pirmakursių krikštynų ir stovyklos organizavimo."
+                        : "For two years, I supported first-year students in adapting to university life, becoming involved in the student community, and getting to know student life. I also contributed to organizing the first-year student initiation event and camp."}
+                    </p>
+                  </div>
+
+                  <div className="rounded-2xl border border-[#E5A078]/20 bg-white/60 p-5">
+                    <h4 className="font-medium text-[#C9825C]">
+                      {language === "lt"
+                        ? "Ryšių su visuomene komitetas"
+                        : "Public Relations Committee"}
+                    </h4>
+                    <p className="mt-3 text-sm leading-7 text-black/55">
+                      {language === "lt"
+                        ? "Prisidėjau prie vizualinių maketų kūrimo, rengiau pirmakursių stovyklos vadovų pristatymų tekstus ir savarankiškai sukūriau jų maketą."
+                        : "Contributed to visual design projects, prepared presentation texts for first-year student camp leaders, and independently designed the presentation layouts."}
+                    </p>
+
+
+                    <button
+                      type="button"
+                      onClick={() => onOpenDesign("/images/kvietimas.png")}
+className="mt-5 ml-auto flex w-fit items-center gap-2 text-sm font-medium text-[#C9825C] underline underline-offset-4 transition-colors hover:text-[#A96845]"                    >
+                      {language === "lt"
+                        ? "Peržiūrėti mano maketą"
+                        : "View my design"}
+                    </button>
+
+
+                  </div>
+
+
+
+
+
+
+
+
+                </div>
+              )}
+<div className="mt-5 flex justify-end">
+  <span
+    className="text-xs uppercase tracking-[0.18em]"
+    style={{ color: experience.color }}
+  >
+    {experience.duration[language]}
+  </span>
+</div>
             </div>
           </div>
         </div>
@@ -493,8 +612,14 @@ export default function Home() {
     null
   );
   const [copied, setCopied] = useState(false);
-
+  const [showStudentActivity, setShowStudentActivity] = useState(false);
+  const [showInvitation, setShowInvitation] = useState(false);
+  const [selectedCertificate, setSelectedCertificate] = useState<string | null>(null);
+const [selectedDesign, setSelectedDesign] = useState<string | null>(null);
+  const openDesign = (src: string) => setSelectedDesign(src);
+  const [showCertificates, setShowCertificates] = useState(false);
   const t = content[language];
+  const [showDesign, setShowDesign] = useState(false);
 
   /* =======================================================
      HEADER + HERO SCROLL
@@ -535,6 +660,52 @@ export default function Home() {
     };
   }, []);
 
+  
+/* Klaviatūros mygtukų paspaudimo įvykis */
+useEffect(() => {
+  const handleKeyDown = (event: KeyboardEvent) => {
+    if (event.key === "Escape") {
+      setSelectedCertificate(null);
+      setSelectedDesign(null);
+      return;
+    }
+
+    if (!selectedCertificate) return;
+
+    const certificates = [
+      "/certificates/introduction-to-python.png",
+      "/certificates/intermediate-python.png",
+      "/certificates/introduction-to-sql.png",
+      "/certificates/intermediate-sql.png",
+      "/certificates/joining-data-in-sql.png",
+      "/certificates/data-manipulation-in-sql.png",
+    ];
+
+    if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+      event.preventDefault();
+
+      setSelectedCertificate((current) => {
+        if (!current) return null;
+
+        const index = certificates.indexOf(current);
+        if (index === -1) return current;
+
+        const direction = event.key === "ArrowLeft" ? -1 : 1;
+
+        return certificates[
+          (index + direction + certificates.length) % certificates.length
+        ];
+      });
+    }
+  };
+
+  window.addEventListener("keydown", handleKeyDown);
+
+  return () => {
+    window.removeEventListener("keydown", handleKeyDown);
+  };
+}, [selectedCertificate]);
+
   /* =======================================================
      COPY EMAIL
   ======================================================= */
@@ -570,11 +741,10 @@ export default function Home() {
       ===================================================== */}
 
       <nav
-        className={`fixed left-0 top-0 z-50 w-full px-6 py-6 md:px-10 transition-all duration-500 ${
-          showHeader
-            ? "translate-y-0 opacity-100"
-            : "-translate-y-4 opacity-0 pointer-events-none"
-        }`}
+        className={`fixed left-0 top-0 z-50 w-full px-6 py-6 md:px-10 transition-all duration-500 ${showHeader
+          ? "translate-y-0 opacity-100"
+          : "-translate-y-4 opacity-0 pointer-events-none"
+          }`}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between">
           <a
@@ -627,11 +797,10 @@ export default function Home() {
               aria-pressed={language === "lt"}
               aria-label="Pasirinkti lietuvių kalbą"
               onClick={() => setLanguage("lt")}
-              className={`rounded-full px-4 py-2 text-xs transition ${
-                language === "lt"
-                  ? "bg-black text-white"
-                  : "text-black/50 hover:text-black"
-              }`}
+              className={`rounded-full px-4 py-2 text-xs transition ${language === "lt"
+                ? "bg-black text-white"
+                : "text-black/50 hover:text-black"
+                }`}
             >
               LT
             </button>
@@ -641,11 +810,10 @@ export default function Home() {
               aria-pressed={language === "en"}
               aria-label="Switch to English"
               onClick={() => setLanguage("en")}
-              className={`rounded-full px-4 py-2 text-xs transition ${
-                language === "en"
-                  ? "bg-black text-white"
-                  : "text-black/50 hover:text-black"
-              }`}
+              className={`rounded-full px-4 py-2 text-xs transition ${language === "en"
+                ? "bg-black text-white"
+                : "text-black/50 hover:text-black"
+                }`}
             >
               EN
             </button>
@@ -690,8 +858,7 @@ export default function Home() {
                 fill
                 priority
                 sizes="(max-width: 768px) 100vw, 400px"
-                className="object-cover"
-              />
+className="object-cover object-[center_20%]"              />
             </div>
 
             <div className="absolute -right-14 top-2 h-11 w-11 rounded-full border-4 border-white bg-[#b8e8d4] shadow-lg" />
@@ -722,7 +889,8 @@ export default function Home() {
 
       <section
         id="about"
-        className="relative overflow-hidden px-6 py-32 md:py-44" style={{ background: "linear-gradient(to bottom, #faf9f6 0%, #f8f4fa 10%, #f4efff 32%, #fff4f8 70%, #fff3df 100%)" }}
+        className="relative overflow-hidden px-6 py-32 md:py-44"
+        style={{ background: "linear-gradient(to bottom, #faf9f6 0%, #f8f4fa 10%, #f4efff 32%, #fff4f8 70%, #fff3df 100%)" }}
       >
         <div className="pointer-events-none absolute inset-x-0 bottom-[-180px] h-[450px] bg-gradient-to-b from-[#f4efff] via-[#fff1f6] to-[#fff7ed] blur-3xl" />
 
@@ -731,7 +899,6 @@ export default function Home() {
         <div className="relative mx-auto max-w-6xl">
           <Reveal>
             <SectionHeading
-              eyebrow={t.about.eyebrow}
               title={t.about.title}
             />
           </Reveal>
@@ -750,54 +917,9 @@ export default function Home() {
             </Reveal>
           </div>
 
-          <div className="mt-16 grid gap-4 md:grid-cols-3">
-            <Reveal delay={120}>
-              <div className="h-full rounded-[2rem] border border-black/[0.06] bg-white/60 p-7 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:bg-white/80">
-                <p className="text-xs uppercase tracking-[0.18em] text-black/30">
-                  2022 — 2026
-                </p>
 
-                <h3 className="mt-8 text-2xl font-medium tracking-tight">
-                  {t.about.university}
-                </h3>
+          <div className="mt-16 space-y-5">
 
-                <p className="mt-3 text-sm leading-7 text-black/45">
-                  {t.about.universityText}
-                </p>
-              </div>
-            </Reveal>
-
-            <Reveal delay={220}>
-              <div className="h-full rounded-[2rem] border border-black/[0.06] bg-white/60 p-7 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:bg-white/80">
-                <p className="text-xs uppercase tracking-[0.18em] text-black/30">
-                  2025
-                </p>
-
-                <h3 className="mt-8 text-2xl font-medium tracking-tight">
-                  {t.about.erasmus}
-                </h3>
-
-                <p className="mt-3 text-sm leading-7 text-black/45">
-                  {t.about.erasmusText}
-                </p>
-              </div>
-            </Reveal>
-
-            <Reveal delay={320}>
-              <div className="h-full rounded-[2rem] border border-black/[0.06] bg-white/60 p-7 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:bg-white/80">
-                <p className="text-xs uppercase tracking-[0.18em] text-black/30">
-                  5 mėn. / mentorystė
-                </p>
-
-                <h3 className="mt-8 text-2xl font-medium tracking-tight">
-                  {t.about.representation}
-                </h3>
-
-                <p className="mt-3 text-sm leading-7 text-black/45">
-                  {t.about.representationText}
-                </p>
-              </div>
-            </Reveal>
           </div>
         </div>
       </section>
@@ -808,27 +930,26 @@ export default function Home() {
 
       <section
         id="experience"
-        className="relative overflow-hidden px-6 py-32 md:py-44" style={{ background: "linear-gradient(to bottom, #fff3df 0%, #fff7ed 24%, #faf9f6 100%)" }}
-      >
-        <div className="pointer-events-none absolute inset-x-0 top-[-180px] h-[450px] bg-gradient-to-b from-[#fff1f6] via-[#fff7ed] to-transparent blur-3xl" />
-
+        className="relative overflow-hidden px-6 py-20 md:py-24" 
+style={{ background: "linear-gradient(to bottom, #fff1f6 0%, #fff3df 35%, #fff7ed 70%, #faf9f6 100%)" }}      >
+<div className="pointer-events-none absolute inset-x-0 top-[-100px] h-[350px] bg-gradient-to-b from-[#fff1f6]/80 via-[#fff3df]/50 to-transparent blur-3xl" />
         <div className="pointer-events-none absolute inset-x-0 bottom-[-200px] h-[450px] bg-gradient-to-b from-[#fff7ed] via-[#faf9f6] to-[#f2f7f4] blur-3xl" />
 
         <div className="relative mx-auto max-w-6xl">
           <Reveal>
             <SectionHeading
-              eyebrow={t.experience.eyebrow}
               title={t.experience.title}
-              description={t.experience.description}
+
             />
           </Reveal>
 
-          <div className="mt-16 space-y-4 md:mt-20">
+          <div className="mt-16 space-y-8 md:mt-25">
             {experiences.map((experience, index) => (
               <Reveal
                 key={experience.id}
                 delay={index * 120}
               >
+
                 <ExperienceCard
                   experience={experience}
                   language={language}
@@ -840,118 +961,164 @@ export default function Home() {
                         : experience.id
                     )
                   }
+                  onOpenDesign={openDesign}
                 />
+
               </Reveal>
             ))}
           </div>
         </div>
       </section>
+      {/* DESIGN PREVIEW */}
+      {selectedDesign && (
+        <div
+          className="fixed inset-0 z-[110] flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm"
+          onClick={() => setSelectedDesign(null)}
+        >
+          <div
+            className="relative flex max-h-[90vh] w-full max-w-5xl flex-col items-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              type="button"
+              onClick={() => setSelectedDesign(null)}
+              className="mb-3 self-end rounded-full bg-white/10 px-4 py-2 text-white transition hover:bg-white/20"
+              aria-label="Uždaryti maketą"
+            >
+              ✕ Uždaryti
+            </button>
+
+            <img
+              src={selectedDesign}
+              alt="Mano kurtas maketas"
+              className="max-h-[80vh] max-w-full rounded-lg object-contain"
+            />
+          </div>
+        </div>
+      )}
 
       {/* =====================================================
-          EDUCATION
-      ===================================================== */}
+    EDUCATION
+===================================================== */}
 
       <section
         id="education"
-        className="relative overflow-hidden px-6 py-32 md:py-44" style={{ background: "linear-gradient(to bottom, #faf9f6 0%, #f5f7f5 55%, #edf7f2 100%)" }}
+        className="relative overflow-hidden px-6 py-20 md:py-24"
+        style={{
+          background:
+            "linear-gradient(to bottom, #faf9f6 0%, #f5f7f5 55%, #edf7f2 100%)",
+        }}
       >
+        {/* Background accents */}
         <div className="pointer-events-none absolute inset-x-0 top-[-180px] h-[400px] bg-gradient-to-b from-[#fff7ed] to-[#faf9f6] blur-3xl" />
+
+        <div className="pointer-events-none absolute -right-40 top-1/3 h-96 w-96 rounded-full bg-[#c9b6ff]/10 blur-3xl" />
 
         <div className="pointer-events-none absolute inset-x-0 bottom-[-180px] h-[420px] bg-gradient-to-b from-[#faf9f6] via-[#f1f7f3] to-[#edf7f2] blur-3xl" />
 
         <div className="relative mx-auto max-w-6xl">
           <Reveal>
             <SectionHeading
-              eyebrow={t.education.eyebrow}
               title={t.education.title}
             />
           </Reveal>
 
-          <div className="relative mt-20">
-            <div className="absolute left-[7px] top-4 hidden h-[calc(100%-2rem)] w-px bg-black/10 md:block" />
+          <div className="relative mt-16 md:mt-20">
 
-            <div className="space-y-14 md:space-y-20">
+            {/* Timeline line */}
+            <div className="absolute bottom-8 left-[7px] top-8 w-px bg-gradient-to-b from-[#ffd59e]/80 via-[#c9b6ff]/80 to-[#ffb7d5]/80 md:left-[9px]" />
+
+            <div className="space-y-8 md:space-y-10">
+
+              {/* Gymnasium */}
               <Reveal>
-                <div className="grid gap-6 md:grid-cols-[160px_1fr] md:gap-12">
-                  <div>
-                    <div className="hidden h-4 w-4 rounded-full border-4 border-[#faf9f6] bg-[#c9b6ff] shadow-sm md:block" />
+                <div className="relative pl-9 md:pl-12">
 
-                    <p className="mt-4 text-xs uppercase tracking-[0.18em] text-black/35">
+                  {/* Timeline dot */}
+                  <div className="absolute left-0 top-8 z-10 h-4 w-4 rounded-full border-[3px] border-[#faf9f6] bg-[#e9bd82] shadow-[0_0_0_4px_rgba(255,213,158,0.20)] md:left-[2px] md:h-[18px] md:w-[18px]" />
+
+                  <article className="group rounded-[1.75rem] border border-[#e9bd82]/30 bg-white/75 p-6 shadow-[0_10px_40px_rgba(0,0,0,0.025)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:border-[#e9bd82]/60 hover:bg-white/90 hover:shadow-[0_20px_55px_rgba(201,182,255,0.12)] md:rounded-[2rem] md:p-9 lg:p-10">
+                    <span className="inline-flex rounded-full border border-[#ffd59e]/60 bg-[#ffd59e]/20 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.16em] text-[#b78343]">
                       {t.education.schoolDate}
-                    </p>
-                  </div>
+                    </span>
 
-                  <div className="rounded-[2rem] border border-black/[0.06] bg-white/65 p-7 shadow-sm backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:shadow-lg md:p-9">
-                    <p className="text-xs uppercase tracking-[0.18em] text-black/30">
-                      {t.education.schoolDate}
-                    </p>
-
-                    <h3 className="mt-4 text-2xl font-medium tracking-tight md:text-3xl">
+                    <h3 className="mt-5 text-2xl font-medium leading-tight tracking-[-0.035em] md:text-3xl lg:text-4xl">
                       {t.education.school}
                     </h3>
-                  </div>
+
+                    <p className="mt-3 text-sm leading-7 text-black/45 md:text-base">
+                      {language === "lt"
+                        ? "Vidurinis išsilavinimas"
+                        : "Secondary education"}
+                    </p>
+
+                  </article>
                 </div>
               </Reveal>
 
+              {/* University */}
               <Reveal delay={120}>
-                <div className="grid gap-6 md:grid-cols-[160px_1fr] md:gap-12">
-                  <div>
-                    <div className="hidden h-4 w-4 rounded-full border-4 border-[#faf9f6] bg-[#9d83e8] shadow-sm md:block" />
+                <div className="relative pl-9 md:pl-12">
 
-                    <p className="mt-4 text-xs uppercase tracking-[0.18em] text-black/35">
+                  {/* Timeline dot */}
+                  <div className="absolute left-0 top-8 z-10 h-4 w-4 rounded-full border-[3px] border-[#faf9f6] bg-[#9d83e8] shadow-[0_0_0_4px_rgba(201,182,255,0.22)] md:left-[2px] md:h-[18px] md:w-[18px]" />
+
+                  <article className="group rounded-[1.75rem] border border-[#c9b6ff]/35 bg-white/80 p-6 shadow-[0_10px_40px_rgba(0,0,0,0.025)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:border-[#c9b6ff]/70 hover:bg-white/95 hover:shadow-[0_20px_55px_rgba(157,131,232,0.14)] md:rounded-[2rem] md:p-9 lg:p-10">
+                    <span className="inline-flex rounded-full border border-[#c9b6ff]/50 bg-[#c9b6ff]/20 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.16em] text-[#8b72d9]">
                       {t.education.universityDate}
-                    </p>
-                  </div>
+                    </span>
 
-                  <div className="rounded-[2rem] border border-[#c9b6ff]/30 bg-white/75 p-7 shadow-sm backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:shadow-lg md:p-9">
-                    <p className="text-xs uppercase tracking-[0.18em] text-[#8b72d9]">
-                      {t.education.universityDate}
-                    </p>
-
-                    <h3 className="mt-4 text-3xl font-medium tracking-tight md:text-4xl">
+                    <h3 className="mt-5 text-3xl font-medium leading-tight tracking-[-0.035em] md:text-4xl">
                       {t.education.university}
                     </h3>
 
-                    <p className="mt-3 text-lg text-black/60">
+                    <p className="mt-3 text-sm font-medium text-[#9d83e8] md:text-base">
                       {t.education.degree}
                     </p>
 
-                    <p className="mt-2 text-sm leading-7 text-black/40">
+                    <p className="mt-2 text-sm leading-7 text-black/45 md:text-base">
                       {t.education.program}
                     </p>
-                  </div>
+
+                  </article>
                 </div>
               </Reveal>
 
+              {/* Erasmus+ */}
               <Reveal delay={240}>
-                <div className="grid gap-6 md:grid-cols-[160px_1fr] md:gap-12">
-                  <div>
-                    <div className="hidden h-4 w-4 rounded-full border-4 border-[#faf9f6] bg-[#ffb7d5] shadow-sm md:block" />
+                <div className="relative pl-9 md:pl-12">
 
-                    <p className="mt-4 text-xs uppercase tracking-[0.18em] text-black/35">
+                  {/* Timeline dot */}
+                  <div className="absolute left-0 top-8 z-10 h-4 w-4 rounded-full border-[3px] border-[#faf9f6] bg-[#e5a1b7] shadow-[0_0_0_4px_rgba(255,183,213,0.22)] md:left-[2px] md:h-[18px] md:w-[18px]" />
+
+                  <article className="group rounded-[1.75rem] border border-[#ffb7d5]/35 bg-white/75 p-6 shadow-[0_10px_40px_rgba(0,0,0,0.025)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:border-[#ffb7d5]/70 hover:bg-white/90 hover:shadow-[0_20px_55px_rgba(229,161,183,0.14)] md:rounded-[2rem] md:p-9 lg:p-10">
+                    <span className="inline-flex rounded-full border border-[#ffb7d5]/50 bg-[#ffb7d5]/20 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.16em] text-[#c9829a]">
                       {t.education.erasmusDate}
-                    </p>
-                  </div>
+                    </span>
 
-                  <div className="rounded-[2rem] border border-[#ffb7d5]/30 bg-white/70 p-7 shadow-sm backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:shadow-lg md:p-9">
-                    <p className="text-xs uppercase tracking-[0.18em] text-[#d98c9f]">
-                      {t.education.erasmusDate}
-                    </p>
-
-                    <h3 className="mt-4 text-3xl font-medium tracking-tight">
+                    <h3 className="mt-5 text-3xl font-medium leading-tight tracking-[-0.035em] md:text-4xl">
                       {t.education.erasmus}
                     </h3>
 
-                    <p className="mt-4 max-w-2xl text-base leading-8 text-black/50">
+                    <p className="mt-3 text-sm font-medium text-[#d98c9f] md:text-base">
+                      {language === "lt"
+                        ? "Mainų studijos"
+                        : "Exchange studies"}
+                    </p>
+
+                    <p className="mt-3 max-w-2xl text-sm leading-7 text-black/50 md:text-base md:leading-8">
                       {t.education.erasmusText}
                     </p>
-                  </div>
+
+                  </article>
                 </div>
               </Reveal>
+
             </div>
           </div>
         </div>
       </section>
+
 
       {/* =====================================================
           SKILLS
@@ -959,7 +1126,7 @@ export default function Home() {
 
       <section
         id="skills"
-        className="relative overflow-hidden px-6 py-32 md:py-44" style={{
+        className="relative overflow-hidden px-6 py-20 md:py-24" style={{
           background:
             "linear-gradient(to bottom, #edf7f2 0%, #e8f3ee 55%, #dce8e3 100%)",
         }}
@@ -971,13 +1138,12 @@ export default function Home() {
         <div className="relative mx-auto max-w-6xl">
           <Reveal>
             <SectionHeading
-              eyebrow={t.skills.eyebrow}
               title={t.skills.title}
               description={t.skills.description}
             />
           </Reveal>
 
-          <div className="mt-16 grid gap-5 md:grid-cols-3">
+          <div className="mt-16 grid grid-cols-1 gap-5 md:grid-cols-3">
             <Reveal delay={100}>
               <div className="h-full rounded-[2rem] border border-black/[0.06] bg-white/65 p-7 shadow-sm backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:bg-white/85 hover:shadow-xl md:p-8">
                 <p className="text-xs uppercase tracking-[0.18em] text-black/35">
@@ -1015,9 +1181,13 @@ export default function Home() {
                     t.skills.pycharm,
                     t.skills.vscode,
                     t.skills.anaconda,
-                  ].map((skill) => (
+                    t.skills.davinciResolve,
+                    t.skills.photoshop,
+                    t.skills.solidworks,
+                    t.skills.canva,
+                  ].map((skill, index) => (
                     <span
-                      key={skill}
+                      key={`${skill}-${index}`}
                       className="rounded-full border border-black/[0.07] bg-[#faf9f6] px-4 py-2.5 text-sm text-black/65 transition-all duration-300 hover:-translate-y-0.5 hover:border-[#d98c9f]/30 hover:bg-[#fff1f5]"
                     >
                       {skill}
@@ -1049,9 +1219,217 @@ export default function Home() {
                 </div>
               </div>
             </Reveal>
+
+            {/* CERTIFICATES */}
+            <Reveal delay={200} className="md:col-span-3">
+              <div
+                className="md:col-span-3 rounded-[2rem] border border-black/[0.06] bg-white/65 p-7 shadow-sm backdrop-blur-xl transition-all duration-500 hover:bg-white/85 hover:shadow-xl md:p-8"              >
+
+                <div className="flex items-center justify-between gap-6">
+                  <div>
+                    <h3 className="text-3xl font-semibold tracking-tight">                      {language === "lt" ? "Sertifikatai" : "Certificates"}
+                    </h3>
+
+                    <p className="mt-2 text-base leading-7 text-black/50">
+                      {language === "lt" ? "Python ir SQL." : "Python and SQL."}
+                    </p>
+                  </div>
+
+                  <button
+                    type="button"
+                    onClick={() => setShowCertificates(!showCertificates)}
+                    aria-expanded={showCertificates}
+                    className="shrink-0 inline-flex items-center gap-3 rounded-full border border-black/10 bg-white/70 px-5 py-3 text-sm transition hover:bg-white"
+                  >
+                    {showCertificates
+                      ? language === "lt" ? "Paslėpti" : "Hide certificates"
+                      : language === "lt" ? "Peržiūrėti" : "View certificates"}
+
+                    <span
+                      className={`transition-transform duration-300 ${showCertificates ? "rotate-180" : ""
+                        }`}
+                    >
+                      ↓
+                    </span>
+                  </button>
+                </div>
+
+
+                <div
+                  className={`grid transition-[grid-template-rows,opacity,margin] duration-500 ease-in-out ${showCertificates
+                    ? "mt-6 grid-rows-[1fr] opacity-100"
+                    : "mt-0 grid-rows-[0fr] opacity-0"
+                    }`}
+                  aria-hidden={!showCertificates}
+                >
+                  <div className="min-h-0 overflow-hidden">
+                    <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                      {[
+                        {
+                          title: "Introduction to Python",
+                          src: "/certificates/introduction-to-python.png",
+                        },
+                        {
+                          title: "Intermediate Python",
+                          src: "/certificates/intermediate-python.png",
+                        },
+                        {
+                          title: "Introduction to SQL",
+                          src: "/certificates/introduction-to-sql.png",
+                        },
+                        {
+                          title: "Intermediate SQL",
+                          src: "/certificates/intermediate-sql.png",
+                        },
+                        {
+                          title: "Joining Data in SQL",
+                          src: "/certificates/joining-data-in-sql.png",
+                        },
+                        {
+                          title: "Data Manipulation in SQL",
+                          src: "/certificates/data-manipulation-in-sql.png",
+                        },
+                      ].map((certificate) => (
+                        <button
+                          key={certificate.title}
+                          type="button"
+                          onClick={() => setSelectedCertificate(certificate.src)}
+                          className="relative z-10 mx-auto w-full max-w-[250px] cursor-pointer overflow-hidden rounded-2xl border border-black/[0.07] bg-white/80 text-left transition duration-300 hover:-translate-y-1 hover:shadow-md"                        >
+                          <img
+                            src={certificate.src}
+                            alt={certificate.title}
+                            className="h-28 w-full object-contain p-2" />
+
+                          <p className="p-3 text-xs font-medium">
+                            {certificate.title}
+                          </p>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+
+
           </div>
+
         </div>
-      </section>
+      </section >
+
+
+      {/* CERTIFICATE PREVIEW */}
+      {
+        selectedCertificate && (() => {
+          const certificates = [
+            { title: "Introduction to Python", src: "/certificates/introduction-to-python.png" },
+            { title: "Intermediate Python", src: "/certificates/intermediate-python.png" },
+            { title: "Introduction to SQL", src: "/certificates/introduction-to-sql.png" },
+            { title: "Intermediate SQL", src: "/certificates/intermediate-sql.png" },
+            { title: "Joining Data in SQL", src: "/certificates/joining-data-in-sql.png" },
+            { title: "Data Manipulation in SQL", src: "/certificates/data-manipulation-in-sql.png" },
+
+          ];
+
+          const currentIndex = certificates.findIndex(
+            (certificate) => certificate.src === selectedCertificate
+          );
+
+          const currentCertificate = certificates[currentIndex];
+
+          const changeCertificate = (direction: number) => {
+            const nextIndex =
+              (currentIndex + direction + certificates.length) % certificates.length;
+            setSelectedCertificate(certificates[nextIndex].src);
+          };
+
+          return (
+            <div
+              className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm"
+              onClick={() => setSelectedCertificate(null)}
+            >
+              <button
+                type="button"
+                aria-label="Uždaryti"
+                onClick={() => setSelectedCertificate(null)}
+                className="absolute right-3 sm:right-8 top-5 flex h-11 w-11 items-center justify-center rounded-full bg-white text-2xl shadow-lg transition hover:scale-105 leading-none"
+              >
+                <span className="absolute inset-0 flex items-center justify-center">
+                  <svg
+                    viewBox="0 0 24 24"
+                    className="h-5 w-5"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  >
+                    <path d="m18 6-12 12M6 6l12 12" />
+                  </svg>
+                </span>
+              </button>
+
+              <button
+                type="button"
+                aria-label="Ankstesnis sertifikatas"
+                onClick={(event) => {
+                  event.stopPropagation();
+                  changeCertificate(-1);
+                }}
+                className="absolute left-3 sm:left-8 flex h-11 w-11 items-center justify-center rounded-full bg-white/95 text-2xl shadow-lg transition hover:scale-105"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  className="h-5 w-5 -translate-x-px"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="m15 18-6-6 6-6" />
+                </svg>
+              </button>
+
+              <div
+                className="flex max-h-[88vh] max-w-[75vw] flex-col items-center gap-3"
+                onClick={(event) => event.stopPropagation()}
+              >
+                <img
+                  src={currentCertificate?.src}
+                  alt={currentCertificate?.title ?? "Sertifikatas"}
+                  className="max-h-[78vh] max-w-full rounded-xl object-contain shadow-2xl"
+                />
+                <p className="text-center text-sm text-white">
+                  {currentCertificate?.title} · {currentIndex + 1} / {certificates.length}
+                </p>
+              </div>
+
+              <button
+                type="button"
+                aria-label="Kitas sertifikatas"
+                onClick={(event) => {
+                  event.stopPropagation();
+                  changeCertificate(1);
+                }}
+                className="absolute right-3 sm:right-8 flex h-11 w-11 items-center justify-center rounded-full bg-white/95 text-2xl shadow-lg transition hover:scale-105"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  className="h-5 w-5 translate-x-px"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="m9 18 6-6-6-6" />
+                </svg>
+              </button>
+            </div>
+          );
+        })()
+      }
+
 
       {/* =====================================================
           CONTACT
@@ -1059,23 +1437,19 @@ export default function Home() {
 
       <section
         id="contact"
-        className="relative min-h-[80vh] overflow-hidden px-6 py-32 text-white md:py-44" style={{
+        className="relative min-h-[80vh] overflow-hidden px-6 pt-12 pb-20 text-white md:pt-20 md:pb-24" style={{
           background:
             "linear-gradient(to bottom, #dce8e3 0%, #b7c3be 5%, #747f7a 14%, #3b403e 30%, #171717 56%, #171717 100%)",
         }}
       >
-        <div className="pointer-events-none absolute inset-x-0 top-[-180px] h-[400px] bg-gradient-to-b from-[#dce8e3] via-[#394440] to-[#171717] blur-3xl" />
-
-        <div className="pointer-events-none absolute left-1/2 top-1/2 h-[650px] w-[650px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-[#c9b6ff]/10 via-[#ffb7d5]/10 to-[#b8e8d4]/10 blur-3xl" />
-
+        <div className="pointer-events-none absolute inset-x-0 top-[-100px] h-[500px] bg-gradient-to-b from-[#dce8e3] via-[#59615d] to-[#171717] blur-3xl" />
+        <div className="pointer-events-none absolute left-1/2 top-1/2 h-[650px] w-[650px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-[#c9b6ff]/5 via-[#d9b8c7]/5 to-[#b8e8d4]/5 blur-3xl" />
         <div className="relative mx-auto flex min-h-[55vh] max-w-6xl flex-col justify-between">
           <Reveal>
             <div>
-              <p className="text-xs uppercase tracking-[0.22em] text-white/30">
-                {t.contact.eyebrow}
-              </p>
 
-              <h2 className="mt-6 max-w-5xl text-6xl font-semibold leading-[0.9] tracking-[-0.06em] md:text-8xl lg:text-[8rem]">
+
+              <h2 className="mt-6 max-w-5xl -translate-x-2  text-6xl font-semibold leading-[0.9] tracking-[-0.03em] md:text-8xl lg:text-[8rem]">
                 {t.contact.title}
               </h2>
 
@@ -1085,29 +1459,33 @@ export default function Home() {
             </div>
           </Reveal>
 
-          <div className="mt-20 grid gap-12 md:grid-cols-[1fr_auto] md:items-end">
+          <div className="mt-20 grid gap-12 md:grid-cols-[1fr_auto] items-start">
             <Reveal delay={150}>
+
               <div>
                 <p className="text-xs uppercase tracking-[0.18em] text-white/25">
                   {t.contact.email}
                 </p>
 
-                <a
-                  href="mailto:ema.spiliauskaite1@gmail.com"
-                  className="mt-4 inline-block break-all text-2xl tracking-[-0.025em] text-white transition-colors duration-300 hover:text-[#c9b6ff] md:text-4xl"
-                >
-                  ema.spiliauskaite1@gmail.com
-                </a>
+                <div className="mt-4 flex flex-wrap items-center gap-4">
+                  <a
+                    href="mailto:ema.spiliauskaite1@gmail.com"
+                    className="break-all text-2xl leading-none tracking-[-0.025em] text-white transition-colors duration-300 hover:text-[#c9b6ff] md:text-4xl"
+                  >
+                    ema.spiliauskaite1@gmail.com
+                  </a>
 
-                <button
-                  type="button"
-                  aria-live="polite"
-                  onClick={copyEmail}
-                  className="mt-6 rounded-full border border-white/15 px-5 py-2.5 text-xs text-white/60 transition-all duration-300 hover:border-white/30 hover:bg-white/5 hover:text-white"
-                >
-                  {copied ? t.contact.copied : t.contact.copy}
-                </button>
+                  <button
+                    type="button"
+                    aria-live="polite"
+                    onClick={copyEmail}
+                    className="shrink-0 translate-y-1 rounded-full border border-white/15 px-5 py-2.5 text-xs text-white/60 transition-all duration-300 hover:border-white/30 hover:bg-white/5 hover:text-white"
+                  >
+                    {copied ? t.contact.copied : t.contact.copy}
+                  </button>
+                </div>
               </div>
+
             </Reveal>
 
             <Reveal delay={250}>
@@ -1118,7 +1496,7 @@ export default function Home() {
 
                 <a
                   href="tel:+37062585817"
-                  className="mt-3 inline-block text-lg text-white/70 transition-colors hover:text-white"
+                  className="mt-6 inline-block text-lg text-white/70 transition-colors hover:text-white"
                 >
                   +370 625 85817
                 </a>
@@ -1133,6 +1511,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </main>
+    </main >
   );
 }
