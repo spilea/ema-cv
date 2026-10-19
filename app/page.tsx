@@ -899,7 +899,8 @@ className="object-cover object-[center_20%]"              />
         <div className="relative mx-auto max-w-6xl">
           <Reveal>
             <SectionHeading
-              title={t.about.title}
+eyebrow={language === "lt" ? "APIE MANE" : "ABOUT ME"}
+  title={t.about.title}
             />
           </Reveal>
 
@@ -938,7 +939,7 @@ style={{ background: "linear-gradient(to bottom, #fff1f6 0%, #fff3df 35%, #fff7e
         <div className="relative mx-auto max-w-6xl">
           <Reveal>
             <SectionHeading
-              title={t.experience.title}
+eyebrow={language === "lt" ? "KARJERA" : "EXPERIENCE"}              title={t.experience.title}
 
             />
           </Reveal>
@@ -1019,6 +1020,7 @@ style={{ background: "linear-gradient(to bottom, #fff1f6 0%, #fff3df 35%, #fff7e
         <div className="relative mx-auto max-w-6xl">
           <Reveal>
             <SectionHeading
+eyebrow={language === "lt" ? "STUDIJOS" : "EDUCATION"}
               title={t.education.title}
             />
           </Reveal>
@@ -1138,6 +1140,7 @@ style={{ background: "linear-gradient(to bottom, #fff1f6 0%, #fff3df 35%, #fff7e
         <div className="relative mx-auto max-w-6xl">
           <Reveal>
             <SectionHeading
+            eyebrow={language === "lt" ? "KOMPETENCIJOS" : "SKILLS"}
               title={t.skills.title}
               description={t.skills.description}
             />
