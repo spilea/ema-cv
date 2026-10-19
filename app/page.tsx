@@ -404,20 +404,15 @@ function Reveal({
 ========================================================= */
 
 function SectionHeading({
-  eyebrow,
   title,
   description,
 }: {
-  eyebrow: string;
   title: string;
   description?: string;
 }) {
   return (
     <div className="max-w-5xl">
-      <p className="text-xs font-medium uppercase tracking-[0.22em] text-black/35">
-        {eyebrow}
-      </p>
-
+      
       <h2 className="mt-6 text-5xl font-semibold leading-[0.92] tracking-[-0.055em] md:text-7xl lg:text-8xl">
         {title}
       </h2>
@@ -889,8 +884,7 @@ className="object-cover object-[center_20%]"              />
 
       <section
         id="about"
-        className="relative overflow-hidden px-6 py-32 md:py-44"
-        style={{ background: "linear-gradient(to bottom, #faf9f6 0%, #f8f4fa 10%, #f4efff 32%, #fff4f8 70%, #fff3df 100%)" }}
+className="relative overflow-hidden px-6 pt-20 pb-10 md:pt-28 md:pb-12"        style={{ background: "linear-gradient(to bottom, #faf9f6 0%, #f8f4fa 10%, #f4efff 32%, #fff4f8 70%, #fff3df 100%)" }}
       >
         <div className="pointer-events-none absolute inset-x-0 bottom-[-180px] h-[450px] bg-gradient-to-b from-[#f4efff] via-[#fff1f6] to-[#fff7ed] blur-3xl" />
 
@@ -899,7 +893,6 @@ className="object-cover object-[center_20%]"              />
         <div className="relative mx-auto max-w-6xl">
           <Reveal>
             <SectionHeading
-eyebrow={language === "lt" ? "APIE MANE" : "ABOUT ME"}
   title={t.about.title}
             />
           </Reveal>
@@ -911,7 +904,7 @@ eyebrow={language === "lt" ? "APIE MANE" : "ABOUT ME"}
               </p>
             </Reveal>
 
-            <Reveal delay={220}>
+            <Reveal delay={250}>
               <p className="mt-8 max-w-3xl text-base leading-8 text-black/50 md:text-lg">
                 {t.about.paragraph}
               </p>
@@ -939,7 +932,7 @@ style={{ background: "linear-gradient(to bottom, #fff1f6 0%, #fff3df 35%, #fff7e
         <div className="relative mx-auto max-w-6xl">
           <Reveal>
             <SectionHeading
-eyebrow={language === "lt" ? "KARJERA" : "EXPERIENCE"}              title={t.experience.title}
+             title={t.experience.title}
 
             />
           </Reveal>
@@ -1020,8 +1013,7 @@ eyebrow={language === "lt" ? "KARJERA" : "EXPERIENCE"}              title={t.exp
         <div className="relative mx-auto max-w-6xl">
           <Reveal>
             <SectionHeading
-eyebrow={language === "lt" ? "STUDIJOS" : "EDUCATION"}
-              title={t.education.title}
+     title={t.education.title}
             />
           </Reveal>
 
@@ -1140,7 +1132,6 @@ eyebrow={language === "lt" ? "STUDIJOS" : "EDUCATION"}
         <div className="relative mx-auto max-w-6xl">
           <Reveal>
             <SectionHeading
-            eyebrow={language === "lt" ? "KOMPETENCIJOS" : "SKILLS"}
               title={t.skills.title}
               description={t.skills.description}
             />
