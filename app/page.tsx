@@ -563,8 +563,8 @@ function ExperienceCard({
                       onClick={() => onOpenDesign("/images/kvietimas.png")}
 className="mt-5 ml-auto flex w-fit items-center gap-2 text-sm font-medium text-[#C9825C] underline underline-offset-4 transition-colors hover:text-[#A96845]"                    >
                       {language === "lt"
-                        ? "Peržiūrėti mano maketą"
-                        : "View my design"}
+                        ? "Peržiūrėti mano maketus"
+                        : "View my designs"}
                     </button>
 
 
@@ -963,33 +963,81 @@ style={{ background: "linear-gradient(to bottom, #fff1f6 0%, #fff3df 35%, #fff7e
           </div>
         </div>
       </section>
+      
       {/* DESIGN PREVIEW */}
-      {selectedDesign && (
-        <div
-          className="fixed inset-0 z-[110] flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm"
-          onClick={() => setSelectedDesign(null)}
-        >
+      {selectedDesign && (() => {
+        const designs = [
+          { src: "/images/kvietimas.png", title: "Pirmas maketas" },
+          { src: "/images/kvietimas2.jpg", title: "Antras maketas" },
+        ];
+
+        const currentIndex = designs.findIndex(
+          (design) => design.src === selectedDesign
+        );
+
+        const currentDesign = designs[currentIndex];
+
+        const changeDesign = (direction: number) => {
+          const nextIndex =
+            (currentIndex + direction + designs.length) % designs.length;
+          setSelectedDesign(designs[nextIndex].src);
+        };
+
+        return (
           <div
-            className="relative flex max-h-[90vh] w-full max-w-5xl flex-col items-center"
-            onClick={(e) => e.stopPropagation()}
+            className="fixed inset-0 z-[110] flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm"
+            onClick={() => setSelectedDesign(null)}
           >
             <button
               type="button"
+              aria-label="Uždaryti"
               onClick={() => setSelectedDesign(null)}
-              className="mb-3 self-end rounded-full bg-white/10 px-4 py-2 text-white transition hover:bg-white/20"
-              aria-label="Uždaryti maketą"
+              className="absolute right-3 top-5 flex h-11 w-11 items-center justify-center rounded-full bg-white text-2xl shadow-lg sm:right-8"
             >
-              ✕ Uždaryti
+              ✕
             </button>
 
-            <img
-              src={selectedDesign}
-              alt="Mano kurtas maketas"
-              className="max-h-[80vh] max-w-full rounded-lg object-contain"
-            />
+            <button
+              type="button"
+              aria-label="Ankstesnis maketas"
+              onClick={(event) => {
+                event.stopPropagation();
+                changeDesign(-1);
+              }}
+              className="absolute left-3 flex h-11 w-11 items-center justify-center rounded-full bg-white/95 text-2xl shadow-lg sm:left-8"
+            >
+              ‹
+            </button>
+
+            <div
+              className="flex max-h-[88vh] max-w-[75vw] flex-col items-center gap-3"
+              onClick={(event) => event.stopPropagation()}
+            >
+              <img
+                src={currentDesign?.src}
+                alt={currentDesign?.title ?? "Mano kurtas maketas"}
+                className="max-h-[78vh] max-w-full rounded-xl object-contain shadow-2xl"
+              />
+              <p className="text-center text-sm text-white">
+                {currentDesign?.title} · {currentIndex + 1} / {designs.length}
+              </p>
+            </div>
+
+            <button
+              type="button"
+              aria-label="Kitas maketas"
+              onClick={(event) => {
+                event.stopPropagation();
+                changeDesign(1);
+              }}
+              className="absolute right-3 flex h-11 w-11 items-center justify-center rounded-full bg-white/95 text-2xl shadow-lg sm:right-8"
+            >
+              ›
+            </button>
           </div>
-        </div>
-      )}
+        );
+      })()}
+
 
       {/* =====================================================
     EDUCATION
